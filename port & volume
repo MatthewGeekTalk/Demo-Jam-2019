@@ -16,4 +16,21 @@ ifconfig
 wget nginx
 cat index.html
 
+# Docker mount
+docker run --mount type=bind,source=/home/vagrant,target=/mnt/home -it alpine:3.8
+
+# Docker volume
+docker volume ls
+docker volume create test_volume
+docker volume inspect test_volume
+docker run -P --mount source=test_volume,target=/mnt/home -it alpine:3.8
+cd mnt/home
+echo hello > hello
+cat hello
+exit
+docker rm
+ocker run -P --mount source=test_volume,target=/mnt/home -it alpine:3.8
+cd mnt/home
+
+
 
