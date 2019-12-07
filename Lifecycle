@@ -1,1 +1,32 @@
+# Docker Command
+docker (container, images, network, volume)
 
+# Docker Nginx Example
+docker create nginx
+docker ps
+docker ps -a
+
+# Docker whalesay Example
+docker run docker/whalesay cowsay hello world
+# Check Log
+docker logs 
+# Re-start container
+docker start
+# Check Log wheather it's same layer
+docker logs
+
+# Detached, interactive example
+docker run nginx
+docker run -d nginx
+docker exec -it nginx /bin/bash
+
+# Information about containers
+docker images
+docker images --no-trunc 
+
+# Docker remove conatiners
+docker rm $(docker ps -aq)
+
+# Docker Port Forwarding
+docker run -d -p 8081:80 nginx
+docker run -d -P nginx
