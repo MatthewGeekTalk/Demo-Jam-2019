@@ -22,6 +22,7 @@ EXPOSE 80
 # Entrypoint
 ENTRYPOINT ["ls", "-al"]
 
+cd ~/test
 docker build -t test/test .
 docker run -it --rm test/test ./home
 
