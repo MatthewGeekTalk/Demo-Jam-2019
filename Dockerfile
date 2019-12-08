@@ -21,3 +21,6 @@ EXPOSE 80
 
 # Entrypoint
 ENTRYPOINT ["ls", "-al"]
+
+
+https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact
