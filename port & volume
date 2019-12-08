@@ -4,12 +4,14 @@ docker run -d -P nginx
 
 # Check docker network
 docker network ls
+docker inspect <netowrk id>
 ifconfig -a
-docker exec -it
+docker inspect <container id>
 
 # Create new network
 docker network create test
 docker network ls
+docker inspect <network id>
 ifconfig -a
 docker run -d --name nginx --network test nginx
 docker inspect nginx
