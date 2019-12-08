@@ -5,15 +5,20 @@ docker (container, images, network, volume)
 docker create nginx
 docker ps
 docker ps -a
+docker start <container id>
+docker ps -a
+docker stop <container id>
+docker rm <container id>
+docker run -d nginx
 
 # Docker whalesay Example
 docker run docker/whalesay cowsay hello world
 # Check Log
-docker logs 
+docker logs <container id>
 # Re-start container
-docker start
+docker start <container id>
 # Check Log wheather it's same layer
-docker logs
+docker logs <container id>
 
 # Detached, interactive example
 docker run nginx
