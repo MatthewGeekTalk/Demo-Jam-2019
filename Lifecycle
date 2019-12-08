@@ -32,6 +32,4 @@ docker images --no-trunc
 # Docker remove conatiners
 docker rm $(docker ps -aq)
 
-# Docker Port Forwarding
-docker run -d -p 8081:80 nginx
-docker run -d -P nginx
+
