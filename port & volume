@@ -38,5 +38,7 @@ docker rm
 ocker run -P --mount source=test_volume,target=/mnt/home -it alpine:3.8
 cd mnt/home
 
+docker run -d -p 9000:9000 --privileged -v /var/run/docker.sock:/var/run/docker.sock unws/dockerui
+
 
 
