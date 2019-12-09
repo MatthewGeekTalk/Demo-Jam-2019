@@ -27,3 +27,6 @@ docker build -t test/test .
 docker run -it --rm test/test ./home
 
 https://docs.docker.com/engine/reference/builder/#understand-how-cmd-and-entrypoint-interact
+
+cd~/test/muti
+docker build -t go-wiki:part-0002 .
