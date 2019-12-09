@@ -1,0 +1,29 @@
+kubectl apply -f 02a_simple_pod.yaml --dry-run
+kubectl apply -f 02a_simple_pod.yaml 
+
+kubectl apply -f 02_pod_http_liveness.yaml
+kubectl logs nginx-liveness-pod
+
+kubectl apply -f 02b_pod_exec_liveness.yaml
+kubectl get pod
+kubectl describe pod liveness-exec
+kubectl get pod
+-------------------------------------------------------------------------
+kubectl get nodes --show-labels
+kubectl get pods -n kube-system --show-labels
+kubectl get pods -n kube-system -l component=node-exporter
+kubectl get pods -n kube-system -l component
+kubectl label pod my-first-pod awesome=hair
+
+#Create deployment by kubectl
+kubectl create deploy nginx --image=nginx
+kubectl get deploy,po,replicaset --show-labels
+
+#Scale deployment by kubectl
+kubectl scale deploy nginx --replicas=5
+kubectl get deploy,po,replicaset --show-labels
+
+#Delete pods and watch pod changes
+watch kubectl get pods
+kubectl delete pod <pod_id>
+
