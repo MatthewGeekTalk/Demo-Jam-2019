@@ -8,6 +8,9 @@ kubectl apply -f 02b_pod_exec_liveness.yaml
 kubectl get pod
 kubectl describe pod liveness-exec
 kubectl get pod
+
+kubectl exec -it <pod_id> bash
+kubectl exec -it <pod_id> -c <container_name> bash
 -------------------------------------------------------------------------
 kubectl get nodes --show-labels
 kubectl get pods -n kube-system --show-labels
