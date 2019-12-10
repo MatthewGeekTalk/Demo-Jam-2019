@@ -30,3 +30,22 @@ kubectl get deploy,po,replicaset --show-labels
 watch kubectl get pods
 kubectl delete pod <pod_id>
 
+#Rolling update and back
+kubectl create deploy nginx --image=nginx 
+kubectl scale deploy nginx --replicas=3
+kubectl rollout status deployment nginx
+kubectl set image deployment/nginx nginx=nginx:mainline --record
+kubectl describe deploy nginx
+kubectl rollout history deployment nginx
+
+#Roll back 
+kubectl set image deployment/nginx nginx=nginx:abc --record
+kubectl rollout status deployment nginx
+kubectl get pod
+kubectl explain deployment.spec.strategy.rollingUpdate
+kubectl get deployment -o yaml
+kubectl rollout status deployment nginx
+kubectl rollout history deployment nginx
+kubectl get deployment -o yaml
+
+
